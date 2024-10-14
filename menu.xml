@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu">
+
+    <ImageView
+        android:id="@+id/BackgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/TopHeader"
+        android:name="androidx.appcompat.app.AppCompatDialogFragment"
+        android:layout_width="411dp"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/ReturnButton"
+        android:layout_width="70dp"
+        android:layout_height="56dp"
+        android:src="@drawable/returnbutton"
+        app:layout_constraintBottom_toBottomOf="@+id/TopHeader"
+        app:layout_constraintStart_toStartOf="@+id/TopHeader"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/TopHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TopHeader" />
+
+    <Button
+        android:id="@+id/CourseList"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#362B8A"
+        android:text="Course List"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/EligibilityChecker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopHeader"
+        app:layout_constraintVertical_bias="0.29" />
+
+    <Button
+        android:id="@+id/EligibilityChecker"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#362B8A"
+        android:text="Eligibility Checker"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/BottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopHeader" />
+
+    <Button
+        android:id="@+id/ContactUs"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="#362B8A"
+        android:text="Contact Us"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/BottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EligibilityChecker"
+        app:layout_constraintVertical_bias="0.785" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/BottomHeader"
+        android:name="androidx.appcompat.app.AppCompatDialogFragment"
+        android:layout_width="411dp"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/GMiLogo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:src="@drawable/gmilogo"
+        app:layout_constraintBottom_toBottomOf="@+id/BottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/BottomHeader"
+        app:layout_constraintTop_toTopOf="@+id/BottomHeader"
+        app:layout_constraintVertical_bias="0.631" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
