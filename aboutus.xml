@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutus">
+
+    <!-- Top Header -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/topHeader"
+        android:name="androidx.appcompat.app.AppCompatDialogFragment"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <!-- About Us Title -->
+    <TextView
+        android:id="@+id/AboutUsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABOUT US"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/topHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topHeader"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <!-- TextViews for content -->
+
+    <!-- ImageView and TextView pairs -->
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="145dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:text="Comprehensive and World Class Technology Labs "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/graduatehat" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="290dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="32dp"
+        android:text="33 Years Of German Engineering Education Experience "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/tech" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="137dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:text="German and Malaysian Connection "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="166dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="12dp"
+        android:text="High Employability Rate (93% Employability) "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="164dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:text="Industry 4.0 Ready Graduates "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="290dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="148dp"
+        android:text="Build Your Future With German Engineering and Technology "
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topHeader"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/employed" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:srcCompat="@drawable/link" />
+
+    <!-- Second row of icons -->
+
+    <!-- Next button -->
+
+    <!-- Bottom Header -->
+
+    <Button
+        android:id="@+id/NextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toTopOf="@+id/bottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/bottomHeader"
+        android:name="androidx.appcompat.app.AppCompatDialogFragment"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <!-- GMI Logo -->
+    <ImageView
+        android:id="@+id/GmiLogo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:src="@drawable/gmilogo"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
