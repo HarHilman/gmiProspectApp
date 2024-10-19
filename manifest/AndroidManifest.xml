@@ -12,25 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GmiProspect"
         tools:targetApi="31">
+
+        <!-- Eligibility Checker Activity -->
         <activity
             android:name=".eligibilitychecker"
-            android:exported="false" />
+            android:exported="true" />
+
+        <!-- About Us Activity (Launcher) -->
         <activity
             android:name=".aboutus"
             android:exported="true"
             android:label="@string/title_activity_aboutus"
-            android:theme="@style/Theme.GmiProspect" /> <!-- Menu Activity (Launcher) -->
-        <activity
-            android:name=".menu"
-            android:exported="true">
+            android:theme="@style/Theme.GmiProspect">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Course List Activity -->
-        <activity android:name=".courselist" /> <!-- Contact Us Activity -->
-        <activity android:name=".contactus" />
+        </activity>
+
+        <!-- Menu Activity -->
+        <activity
+            android:name=".menu"
+            android:exported="true" />
+
+        <!-- Course List Activity -->
+        <activity
+            android:name=".courselist"
+            android:exported="true" />
+
+        <!-- Contact Us Activity -->
+        <activity
+            android:name=".contactus"
+            android:exported="true" />
     </application>
 
 </manifest>
