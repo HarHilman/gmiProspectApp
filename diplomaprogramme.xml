@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Electrical Engineering Section -->
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELECTRICAL ENGINEERING"
+            android:textColor="#2247A0"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingBottom="8dp"/>
+
+        <!-- Mechatronics -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MECHATRONICS"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_mechatronics_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_mechatronics_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Electronics & Information Technology -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELECTRONICS AND INFORMATION TECHNOLOGY"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_electronics_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_electronics_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Sustainable Energy & Power Distribution -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUSTAINABLE ENERGY AND POWER DISTRIBUTION"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_energy_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_energy_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Process Instrumentation & Control -->
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROCESS INSTRUMENTATION AND CONTROL"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_instrumentation_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_instrumentation_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Autotronics Engineering Technology -->
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AUTOTRONICS ENGINEERING TECHNOLOGY"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_autotronics_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_autotronics_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Mechanical Engineering Section -->
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MECHANICAL ENGINEERING"
+            android:textColor="#2247A0"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <!-- Precision Tooling Engineering Technology -->
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRECISION TOOLING ENGINEERING TECHNOLOGY"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_tooling_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_tooling_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Industrial Design -->
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INDUSTRIAL DESIGN"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_industrial_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_industrial_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Computer & Information Section -->
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMPUTER AND INFORMATION"
+            android:textColor="#2247A0"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <!-- Software Engineering -->
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SOFTWARE ENGINEERING"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_software_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_software_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Cyber Security Technology -->
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CYBER SECURITY TECHNOLOGY"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_cybersecurity_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_cybersecurity_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Creative Multimedia -->
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREATIVE MULTIMEDIA"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp">
+            <Button
+                android:id="@+id/button_multimedia_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_multimedia_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
