@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button_mechatronics_apply" type="id">test</item>
+    <item name="button_mechatronics_readmore" type="id">test</item>
+    <item name="button_electronics_apply" type="id">test</item>
+    <item name="button_electronics_readmore" type="id">test</item>
+    <item name="button_energy_apply" type="id">test</item>
+    <item name="button_energy_readmore" type="id">test</item>
+    <item name="button_instrumentation_apply" type="id">test</item>
+    <item name="button_instrumentation_readmore" type="id">test</item>
+    <item name="button_autotronics_apply" type="id">test</item>
+    <item name="button_tooling_apply" type="id">test</item>
+    <item name="button_tooling_readmore" type="id">test</item>
+    <item name="button_industrial_apply" type="id">test</item>
+    <item name="button_industrial_readmore" type="id">test</item>
+    <item name="button_software_apply" type="id">test</item>
+    <item name="button_software_readmore" type="id">test</item>
+    <item name="button_cybersecurity_apply" type="id">test</item>
+    <item name="button_cybersecurity_readmore" type="id">test</item>
+    <item name="button_multimedia_apply" type="id">test</item>
+    <item name="button_multimedia_readmore" type="id">test</item>
+    <item name="textView12" type="id">test</item>
+    <item name="textView" type="id">test</item>
+    <item name="textView2" type="id">test</item>
+    <item name="textView3" type="id">test</item>
+    <item name="textView6" type="id">test</item>
+    <item name="textView11" type="id">test</item>
+    <item name="button_autotronics_readmore" type="id">test</item>
+    <item name="textView13" type="id">test</item>
+    <item name="textView14" type="id">test</item>
+    <item name="textView15" type="id">test</item>
+    <item name="textView21" type="id">test</item>
+    <item name="textView22" type="id">test</item>
+    <item name="textView23" type="id">test</item>
+    <item name="textView24" type="id">test</item>
+</resources>
