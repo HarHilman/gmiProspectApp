@@ -1,15 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- GAPP Section -->
     <TextView
-        android:id="@+id/textViewPreUniversity"
-        android:layout_width="match_parent"
+        android:id="@+id/GAPP_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Pre-University Programme\n1. GAPP\n2. GUFP"
-        android:textSize="18sp"
-        android:textColor="#000"
-        android:padding="16dp" />
+        android:text="German A Levels Preparatory Programme (GAPP)"
+        android:textColor="#2247A0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/GAPP_brief"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Programme Brief"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GAPP_title"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"/>
+
+    <TextView
+        android:id="@+id/GAPP_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Germany land of many opportunities, renowned for its technological achievements and the German higher education is one of the best in the world! A German university degree is highly respected by employers around the world and those from the Universities of Applied Science are very practice-oriented."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GAPP_brief"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/button_GAPP_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="APPLY NOW"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GAPP_explain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/button_GAPP_readmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="READ MORE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/button_GAPP_apply"
+        app:layout_constraintTop_toTopOf="@id/button_GAPP_apply"
+        android:layout_marginStart="16dp"/>
+
+    <!-- GUFP Section -->
+    <TextView
+        android:id="@+id/GUFP_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GMI-UTP FOUNDATION PROGRAMME (GUFP)"
+        android:textColor="#2247A0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_GAPP_apply"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/GUFP_brief"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Programme Brief"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GUFP_title"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"/>
+
+    <TextView
+        android:id="@+id/GUFP_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GMI-UTP Foundation Programme (GUFP) is a strategic partnership between GMI (German Malaysian Institute) and UTP (Universiti Teknologi PETRONAS). This programme is a one-year foundation programme based on the UTP foundation syllabus. Upon completion, students will be qualified to start their Undergraduate Programme at UTP."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GUFP_brief"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/button_GUFP_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="APPLY NOW"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GUFP_explain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/button_GUFP_readmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="READ MORE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/button_GUFP_apply"
+        app:layout_constraintTop_toTopOf="@id/button_GUFP_apply"
+        android:layout_marginStart="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
