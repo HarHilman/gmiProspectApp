@@ -67,4 +67,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottomHeader" />
 
+    <ImageView
+        android:id="@+id/returnButton"
+        android:layout_width="70dp"
+        android:layout_height="56dp"
+        android:src="@drawable/returnbutton"
+        app:layout_constraintBottom_toBottomOf="@+id/TopHeader"
+        app:layout_constraintStart_toStartOf="@+id/TopHeader"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
