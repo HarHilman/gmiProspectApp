@@ -1,6 +1,9 @@
 package gmi.harith.gmiprospect;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -40,5 +43,16 @@ public class courselist extends AppCompatActivity {
                     break;
             }
         }).attach();
+
+        // Find the return button and set its click listener
+        ImageView returnButton = findViewById(R.id.returnButton);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(courselist.this, menu.class);
+                startActivity(intent);
+                finish(); // Optional: If you want to close the current activity.
+            }
+        });
     }
 }
