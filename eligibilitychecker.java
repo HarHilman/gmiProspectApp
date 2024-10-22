@@ -1,6 +1,7 @@
 package gmi.harith.gmiprospect;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -29,7 +30,7 @@ import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class check extends AppCompatActivity {
+public class eligibilitychecker extends AppCompatActivity {
 
     private static final int PICK_FILE_REQUEST_CODE = 1;
     private static final int REQUEST_READ_PERMISSION = 100;
@@ -42,7 +43,7 @@ public class check extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checker); // Link to checker.xml
+        setContentView(R.layout.eligibilitychecker); // Link to checker.xml
 
         // Initialize the UI elements
         initializeUI();
@@ -56,7 +57,7 @@ public class check extends AppCompatActivity {
         // Eligibility check button listener
         checkButton.setOnClickListener(v -> {
             // Eligibility checking logic (not related to OCR part)
-            Toast.makeText(check.this, "Eligibility check passed!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(eligibilitychecker.this, "Eligibility check passed!", Toast.LENGTH_SHORT).show();
         });
 
         // Add subject button to add more dynamic fields
@@ -116,6 +117,7 @@ public class check extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("Range")
     private String getFileName(Uri uri) {
         String fileName = "";
         if (uri.getScheme().equals("content")) {
@@ -134,11 +136,11 @@ public class check extends AppCompatActivity {
         recognizer.process(image)
                 .addOnSuccessListener(visionText -> {
                     Log.d("OCR Result", "Extracted text: " + visionText.getText());
-                    Toast.makeText(check.this, "Extracted text: " + visionText.getText(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(eligibilitychecker.this, "Extracted text: " + visionText.getText(), Toast.LENGTH_LONG).show();
                     extractTextAndFillFields(visionText);
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(check.this, "Failed to recognize text", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(eligibilitychecker.this, "Failed to recognize text", Toast.LENGTH_SHORT).show();
                     Log.e("OCR", "Error: " + e.getMessage());
                 });
     }
