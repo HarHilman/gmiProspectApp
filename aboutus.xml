@@ -8,6 +8,19 @@
     tools:context=".aboutus">
 
     <!-- Top Header -->
+    <ImageView
+        android:id="@+id/backgroundImage2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundimage2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/topHeader"
         android:name="androidx.appcompat.app.AppCompatDialogFragment"
@@ -47,6 +60,8 @@
         android:layout_marginTop="28dp"
         android:text="Comprehensive and World Class Technology Labs "
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -59,6 +74,8 @@
         android:layout_marginTop="32dp"
         android:text="33 Years Of German Engineering Education Experience "
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +88,8 @@
         android:layout_marginTop="36dp"
         android:text="German and Malaysian Connection "
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +113,8 @@
         android:layout_marginTop="28dp"
         android:text="Industry 4.0 Ready Graduates "
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -139,6 +160,7 @@
         android:layout_marginTop="28dp"
         android:text="High Employability Rate (93% Employability) "
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
