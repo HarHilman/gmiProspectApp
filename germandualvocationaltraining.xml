@@ -5,107 +5,121 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Title: GMI i4.0 INITIATIVES -->
+    <!-- GDVT Title -->
     <TextView
-        android:id="@+id/GMiI_title"
+        android:id="@+id/GDVT_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="GMI i4.0 INITIATIVES"
+        android:text="German Dual Vocational Training (GDVT)"
         android:textColor="#2247A0"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintHorizontal_bias="0"/>
 
-    <!-- First Image -->
-    <ImageView
-        android:id="@+id/Industry_picture1"
-        android:layout_width="0dp"
-        android:layout_height="185dp"
-        app:srcCompat="@drawable/industry1"
-        app:layout_constraintTop_toBottomOf="@id/GMiI_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Indurstry_picture2"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_margin="8dp" />
-
-    <!-- Second Image -->
-    <ImageView
-        android:id="@+id/Indurstry_picture2"
-        android:layout_width="0dp"
-        android:layout_height="185dp"
-        app:srcCompat="@drawable/industry2"
-        app:layout_constraintTop_toBottomOf="@id/GMiI_title"
-        app:layout_constraintStart_toEndOf="@id/Industry_picture1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_margin="8dp" />
-
-    <!-- First Read More Button -->
-
-    <!-- Second Read More Button -->
-
-    <!-- Our Initiatives Heading -->
-    <Button
-        android:id="@+id/button_GMiI__readmore1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="8dp"
-        android:background="#F42F2F"
-        android:text="READ MORE"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@id/Industry_picture1"
-        app:layout_constraintTop_toBottomOf="@id/Industry_picture1" />
-
-    <Button
-        android:id="@+id/button_GMiI__readmore2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:background="#F42F2F"
-        android:text="READ MORE"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@id/Indurstry_picture2"
-        app:layout_constraintTop_toBottomOf="@id/Indurstry_picture2" />
-
+    <!-- Mechatronics Section -->
     <TextView
-        android:id="@+id/GMiI_initiative"
+        android:id="@+id/Mechatronics_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="16dp"
         android:paddingTop="8dp"
-        android:text="Our Initiatives"
+        android:text="Mechatronics"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/button_GMiI__readmore1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/GDVT_title"/>
 
-    <!-- Our Initiatives Explanation -->
     <TextView
-        android:id="@+id/GMiI_explain"
+        android:id="@+id/Mechatronics_explain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="As an institution that goes hand in hand with technological developments, the fourth industrial revolution (IR 4.0) is the priority of GMI as a field to be explored and led. GMI has taken several initiatives in preparing the existing facilities and learning modules to be embedded with IR 4.0 selected pillars. Together with our subject matter expert (SME) and IR 4.0 ready facilities, GMI is always ready to work together with the country to become a major player in the IR 4.0 for Technical Education and Vocational Training (TVET) and as the bridge between industry and education."
-        app:layout_constraintTop_toBottomOf="@id/GMiI_initiative"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Get Yourself Connected Heading -->
-    <TextView
-        android:id="@+id/GMiI_quotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Get Yourself Connected"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/GMiI_explain"
+        android:text="As a mechatronics technician, you solve problems and optimize manufacturing processes using your skills in mechanical, electrical, and computer engineering. You ensure machines operate efficiently and troubleshoot any issues. With mechatronics skills in demand, this career path offers exciting job opportunities and job security."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/Mechatronics_title"/>
+
+    <Button
+        android:id="@+id/Mechatronics_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="READ MORE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Mechatronics_explain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Logistics Operation Management Section -->
+    <TextView
+        android:id="@+id/LOM_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="Logistics Operation Management"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Mechatronics_button"/>
+
+    <TextView
+        android:id="@+id/LOM_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="As a logistics manager, you manage transportation and storage, shipments, insurance, customs regulations and trade laws. You provide transport advice and optimize logistics operations for efficient supply chain management."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LOM_title"/>
+
+    <Button
+        android:id="@+id/LOM_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="READ MORE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LOM_explain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Industrial Management Section -->
+    <TextView
+        android:id="@+id/IM_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="Industrial Management"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LOM_button"/>
+
+    <TextView
+        android:id="@+id/IM_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Develops skills in order processing, marketing, sales, purchasing, materials and HR management, logistics, finance and controlling for effective organizational performance."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IM_title"/>
+
+    <Button
+        android:id="@+id/IM_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F42F2F"
+        android:text="READ MORE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IM_explain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
