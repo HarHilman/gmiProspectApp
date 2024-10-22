@@ -235,6 +235,151 @@
                 android:layout_marginLeft="16dp"/>
         </LinearLayout>
 
+        <!-- INDUSTRIAL QUALITY ENGINEERING -->
+        <TextView
+            android:id="@+id/INDUSTRIALQUALITYENGINEERING"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INDUSTRIAL QUALITY ENGINEERING"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_quality_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_quality_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- INNOVATIVE PRODUCT DESIGN -->
+        <TextView
+            android:id="@+id/INNOVATIVEPRODUCTDESIGN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INNOVATIVE PRODUCT DESIGN"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_innovative_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_innovative_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Industrial Design -->
+        <TextView
+            android:id="@+id/CNCPRECISIONTECHNOLOGY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNC PRECISION TECHNOLOGY"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_precision_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_precision_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Industrial Design -->
+        <TextView
+            android:id="@+id/MachineToolsMaintenance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MACHINE TOOLS MAINTENANCE"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_maintenance_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_maintenance_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+        <!-- Manufacturing System -->
+        <TextView
+            android:id="@+id/ManufacturingSystem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MANUFACTURING SYSTEM"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+            <Button
+                android:id="@+id/button_manufacturing_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLY NOW"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/button_manufacturing_readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READ MORE"
+                android:background="#F42F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
         <!-- Computer & Information Section -->
         <TextView
             android:id="@+id/textView21"

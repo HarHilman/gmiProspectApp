@@ -1,18 +1,18 @@
 package gmi.harith.gmiprospect;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import android.app.NotificationManager;
+import android.app.NotificationChannel;
+import android.content.Context;
+import android.os.Build;
 
 public class contactus extends AppCompatActivity {
 
@@ -26,6 +26,7 @@ public class contactus extends AppCompatActivity {
         Button enquirySubmit = findViewById(R.id.enquiry_submit);
         Button integritySubmit = findViewById(R.id.integrity_complaint_submit);
         Button feedbackSubmit = findViewById(R.id.feedback_submit);
+        ImageView returnButton = findViewById(R.id.imageView2); // Your return button
 
         enquirySubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,16 @@ public class contactus extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 submitFeedback();
+            }
+        });
+
+        // Set an onClickListener for the return button
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to go to the menu.java activity
+                Intent intent = new Intent(contactus.this, menu.class);
+                startActivity(intent);
             }
         });
 

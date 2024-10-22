@@ -56,8 +56,19 @@ public class eligibilitychecker extends AppCompatActivity {
 
         // Eligibility check button listener
         checkButton.setOnClickListener(v -> {
-            // Eligibility checking logic (not related to OCR part)
-            Toast.makeText(eligibilitychecker.this, "Eligibility check passed!", Toast.LENGTH_SHORT).show();
+            // Extract the entered grades from the input fields
+            String malayGrade = malayInput.getText().toString().trim();
+            String englishGrade = englishInput.getText().toString().trim();
+            String mathGrade = mathInput.getText().toString().trim();
+            String historyGrade = historyInput.getText().toString().trim();
+            String islamicMoralGrade = islamicMoralInput.getText().toString().trim(); // Assuming Islamic/Moral for Science
+
+            // Call the eligibility check method for the specified course
+            if (isEligibleForElectronicsCourse(mathGrade, islamicMoralGrade, malayGrade, englishGrade, historyGrade)) {
+                Toast.makeText(eligibilitychecker.this, "Eligibility check passed for Electronics-related courses!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(eligibilitychecker.this, "Eligibility check failed! Does not meet the requirements for Electronics-related courses.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Add subject button to add more dynamic fields
@@ -176,14 +187,43 @@ public class eligibilitychecker extends AppCompatActivity {
         dynamicSubjectContainer.addView(newSubject);
     }
 
+    // Eligibility check for Electronics-related courses
+    private boolean isEligibleForElectronicsCourse(String math, String science, String malay, String english, String history) {
+        // Minimum credit (C or above) requirements for Mathematics and Science/Technical subject
+        boolean hasMathCredit = isGradeSufficient(math, "C");
+        boolean hasScienceCredit = isGradeSufficient(science, "C"); // Assuming Science includes Technical subjects
+
+        // Check if student has at least 3 credits (Math + Science + any other passing grades)
+        int creditCount = (hasMathCredit ? 1 : 0) + (hasScienceCredit ? 1 : 0);
+
+        // For simplicity, we'll consider passing grades in other subjects as credits
+        if (isGradePass(malay)) creditCount++;
+        if (isGradePass(english)) creditCount++;
+        if (isGradePass(history)) creditCount++;
+
+        // Return true if student meets all conditions (at least 3 credits)
+        return creditCount >= 3;
+    }
+
+    private boolean isGradeSufficient(String grade, String passingGrade) {
+        return grade.equalsIgnoreCase(passingGrade) ||
+                (passingGrade.equals("C") && grade.matches("[A]|[B]"));
+    }
+
+    private boolean isGradePass(String grade) {
+        return grade.equalsIgnoreCase("A") ||
+                grade.equalsIgnoreCase("B") ||
+                grade.equalsIgnoreCase("C");
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_READ_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Read permission granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Read permission denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
