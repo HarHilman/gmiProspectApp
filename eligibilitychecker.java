@@ -1,25 +1,33 @@
 package gmi.harith.gmiprospect;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.OpenableColumns;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
+import android.widget.TextView;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import android.database.Cursor;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
@@ -27,8 +35,9 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class eligibilitychecker extends AppCompatActivity {
 
@@ -39,46 +48,39 @@ public class eligibilitychecker extends AppCompatActivity {
     private EditText malayInput, englishInput, mathInput, historyInput, islamicMoralInput;
     private Button checkButton, uploadButton, addSubjectButton;
     private LinearLayout dynamicSubjectContainer;
+    private TextView eligibilityResult;
+
+    private String[] additionalSubjects = {
+            "Science", "Geografi (Geography)", "Bahasa Cina (Chinese Language)", "Bahasa Tamil (Tamil Language)",
+            "Bahasa Iban (Iban Language)", "Add Mathematics", "Biology", "Chemistry", "Physics",
+            "Economics", "Accountancy", "Business Studies", "Visual Arts", "Music", "Computer Science",
+            "Engineering Drawing", "Textiles and Fashion", "Agricultural Science", "Technical Drawing",
+            "Home Science", "Sports Science", "Mandarin", "Tamil", "Arabic"
+    };
+    private ArrayList<String> selectedAdditionalSubjects = new ArrayList<>();
+    private Map<String, String> additionalSubjectGrades = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.eligibilitychecker); // Link to checker.xml
+        setContentView(R.layout.eligibilitychecker);
 
-        // Initialize the UI elements
         initializeUI();
-
-        // Request Read Permission if not already granted
         checkAndRequestPermission();
 
-        // Upload button click listener
         uploadButton.setOnClickListener(v -> openFilePicker());
+        checkButton.setOnClickListener(v -> checkEligibility());
+        addSubjectButton.setOnClickListener(v -> showSubjectSelectionDialog());
 
-        // Eligibility check button listener
-        checkButton.setOnClickListener(v -> {
-            // Extract the entered grades from the input fields
-            String malayGrade = malayInput.getText().toString().trim();
-            String englishGrade = englishInput.getText().toString().trim();
-            String mathGrade = mathInput.getText().toString().trim();
-            String historyGrade = historyInput.getText().toString().trim();
-            String islamicMoralGrade = islamicMoralInput.getText().toString().trim(); // Assuming Islamic/Moral for Science
-
-            // Call the eligibility check method for the specified course
-            if (isEligibleForElectronicsCourse(mathGrade, islamicMoralGrade, malayGrade, englishGrade, historyGrade)) {
-                Toast.makeText(eligibilitychecker.this, "Eligibility check passed for Electronics-related courses!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(eligibilitychecker.this, "Eligibility check failed! Does not meet the requirements for Electronics-related courses.", Toast.LENGTH_SHORT).show();
-            }
+        // Apply window insets padding
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
-
-        // Add subject button to add more dynamic fields
-        addSubjectButton.setOnClickListener(v -> addDynamicSubjectField());
     }
 
-    // Initialize UI elements
     private void initializeUI() {
-        typeSpinner = findViewById(R.id.type_spinner);
-        additionalSpinner = findViewById(R.id.additional_spinner);
         malayInput = findViewById(R.id.malay_input);
         englishInput = findViewById(R.id.english_input);
         mathInput = findViewById(R.id.mathematic_input);
@@ -88,6 +90,7 @@ public class eligibilitychecker extends AppCompatActivity {
         uploadButton = findViewById(R.id.upload_button);
         addSubjectButton = findViewById(R.id.add_subject_button);
         dynamicSubjectContainer = findViewById(R.id.dynamic_subject_container);
+        eligibilityResult = findViewById(R.id.eligibility_result);
 
         ImageButton backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(v -> onBackPressed());
@@ -101,8 +104,8 @@ public class eligibilitychecker extends AppCompatActivity {
 
     private void openFilePicker() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");  // Allow browsing for all file types
-        intent.addCategory(Intent.CATEGORY_OPENABLE);  // Only show apps that can open files
+        intent.setType("*/*");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
         startActivityForResult(Intent.createChooser(intent, "Select a file"), PICK_FILE_REQUEST_CODE);
     }
 
@@ -116,56 +119,61 @@ public class eligibilitychecker extends AppCompatActivity {
     }
 
     private void processSelectedFile(Uri fileUri) {
-        String fileName = getFileName(fileUri);
-        Toast.makeText(this, "File selected: " + fileName, Toast.LENGTH_SHORT).show();
-
         try {
-            InputImage image = InputImage.fromFilePath(this, fileUri);
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), fileUri);
+            Bitmap processedBitmap = preprocessImage(bitmap);
+            InputImage image = InputImage.fromBitmap(processedBitmap, 0);
+
             processImageWithOCR(image);
         } catch (Exception e) {
             Log.e("Error", "File processing error", e);
-            Toast.makeText(this, "Error processing file. Make sure it's a valid image.", Toast.LENGTH_SHORT).show();
+            eligibilityResult.setText("Error processing file. Make sure it's a valid image.");
         }
     }
 
-    @SuppressLint("Range")
-    private String getFileName(Uri uri) {
-        String fileName = "";
-        if (uri.getScheme().equals("content")) {
-            try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
-                if (cursor != null && cursor.moveToFirst()) {
-                    fileName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
-                }
-            }
-        }
-        return fileName;
+    private Bitmap preprocessImage(Bitmap bitmap) {
+        Bitmap grayscaleBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(grayscaleBitmap);
+        Paint paint = new Paint();
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setSaturation(0);
+        ColorMatrixColorFilter colorFilter = new ColorMatrixColorFilter(colorMatrix);
+        paint.setColorFilter(colorFilter);
+        canvas.drawBitmap(bitmap, 0, 0, paint);
+
+        Matrix matrix = new Matrix();
+        matrix.postRotate(detectRotationAngle(grayscaleBitmap));
+        return Bitmap.createBitmap(grayscaleBitmap, 0, 0, grayscaleBitmap.getWidth(), grayscaleBitmap.getHeight(), matrix, true);
+    }
+
+    private float detectRotationAngle(Bitmap bitmap) {
+        return 90.0f;
     }
 
     private void processImageWithOCR(InputImage image) {
         TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
 
         recognizer.process(image)
-                .addOnSuccessListener(visionText -> {
-                    Log.d("OCR Result", "Extracted text: " + visionText.getText());
-                    Toast.makeText(eligibilitychecker.this, "Extracted text: " + visionText.getText(), Toast.LENGTH_LONG).show();
-                    extractTextAndFillFields(visionText);
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(eligibilitychecker.this, "Failed to recognize text", Toast.LENGTH_SHORT).show();
-                    Log.e("OCR", "Error: " + e.getMessage());
-                });
+                .addOnSuccessListener(this::extractTextAndFillFields)
+                .addOnFailureListener(e -> eligibilityResult.setText("Failed to recognize text"));
     }
 
     private void extractTextAndFillFields(Text visionText) {
         String fullText = visionText.getText();
+        Log.d("OCR Result", fullText);
 
-        malayInput.setText(extractGrade(fullText, "Malay"));
-        englishInput.setText(extractGrade(fullText, "English"));
-        mathInput.setText(extractGrade(fullText, "Math"));
-        historyInput.setText(extractGrade(fullText, "History"));
-        islamicMoralInput.setText(extractGrade(fullText, "Islamic"));
+        malayInput.setText(extractGrade(fullText, "Bahasa Melayu"));
+        englishInput.setText(extractGrade(fullText, "Bahasa Inggeris"));
+        mathInput.setText(extractGrade(fullText, "Matematik"));
+        historyInput.setText(extractGrade(fullText, "Sejarah"));
+        islamicMoralInput.setText(extractGrade(fullText, "Pendidikan Islam"));
 
-        Toast.makeText(this, "Form auto-filled from OCR result!", Toast.LENGTH_SHORT).show();
+        if (isFormIncomplete()) {
+            showIncompleteFormDialog();
+        } else {
+            eligibilityResult.setText("Form auto-filled successfully!");
+        }
     }
 
     private String extractGrade(String text, String subject) {
@@ -173,7 +181,7 @@ public class eligibilitychecker extends AppCompatActivity {
         if (index != -1) {
             String[] splitText = text.substring(index + subject.length()).trim().split("\\s+");
             for (String word : splitText) {
-                if (word.matches("[A-Ca-c]|\\d+")) {
+                if (word.matches("[A-C][+-]?|A\\+|B\\+|C\\+")) {
                     return word;
                 }
             }
@@ -181,50 +189,138 @@ public class eligibilitychecker extends AppCompatActivity {
         return "";
     }
 
-    private void addDynamicSubjectField() {
-        EditText newSubject = new EditText(this);
-        newSubject.setHint("Additional Subject");
-        dynamicSubjectContainer.addView(newSubject);
+    private boolean isFormIncomplete() {
+        return malayInput.getText().toString().isEmpty() ||
+                englishInput.getText().toString().isEmpty() ||
+                mathInput.getText().toString().isEmpty();
     }
 
-    // Eligibility check for Electronics-related courses
-    private boolean isEligibleForElectronicsCourse(String math, String science, String malay, String english, String history) {
-        // Minimum credit (C or above) requirements for Mathematics and Science/Technical subject
-        boolean hasMathCredit = isGradeSufficient(math, "C");
-        boolean hasScienceCredit = isGradeSufficient(science, "C"); // Assuming Science includes Technical subjects
-
-        // Check if student has at least 3 credits (Math + Science + any other passing grades)
-        int creditCount = (hasMathCredit ? 1 : 0) + (hasScienceCredit ? 1 : 0);
-
-        // For simplicity, we'll consider passing grades in other subjects as credits
-        if (isGradePass(malay)) creditCount++;
-        if (isGradePass(english)) creditCount++;
-        if (isGradePass(history)) creditCount++;
-
-        // Return true if student meets all conditions (at least 3 credits)
-        return creditCount >= 3;
+    private void showIncompleteFormDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Incomplete Information")
+                .setMessage("Some grades were not recognized. Would you like to manually fill in the missing fields or upload a clearer file?")
+                .setPositiveButton("Manual Entry", (dialog, which) -> dialog.dismiss())
+                .setNegativeButton("Re-upload", (dialog, which) -> openFilePicker())
+                .show();
     }
 
-    private boolean isGradeSufficient(String grade, String passingGrade) {
-        return grade.equalsIgnoreCase(passingGrade) ||
-                (passingGrade.equals("C") && grade.matches("[A]|[B]"));
+    private void showSubjectSelectionDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Additional Subject");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, additionalSubjects);
+        builder.setAdapter(adapter, (dialog, which) -> {
+            String selectedSubject = additionalSubjects[which];
+            if (!selectedAdditionalSubjects.contains(selectedSubject)) {
+                selectedAdditionalSubjects.add(selectedSubject);
+                addDynamicSubjectField(selectedSubject);
+            }
+        });
+
+        builder.show();
     }
 
-    private boolean isGradePass(String grade) {
-        return grade.equalsIgnoreCase("A") ||
-                grade.equalsIgnoreCase("B") ||
-                grade.equalsIgnoreCase("C");
+    private void addDynamicSubjectField(String subject) {
+        LinearLayout subjectLayout = new LinearLayout(this);
+        subjectLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        TextView subjectLabel = new TextView(this);
+        subjectLabel.setText(subject);
+        subjectLabel.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        EditText gradeInput = new EditText(this);
+        gradeInput.setHint(subject + " Grade");
+        gradeInput.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        gradeInput.setTag(subject);
+        gradeInput.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                additionalSubjectGrades.put(subject, gradeInput.getText().toString());
+            }
+        });
+
+        subjectLayout.addView(subjectLabel);
+        subjectLayout.addView(gradeInput);
+
+        dynamicSubjectContainer.addView(subjectLayout);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_READ_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+    private void checkEligibility() {
+        StringBuilder resultText = new StringBuilder("Eligible for the following courses:\n\n");
+
+        String englishGrade = englishInput.getText().toString();
+        String mathGrade = mathInput.getText().toString();
+
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Sustainable Energy and Power Distribution")) {
+            resultText.append("- Sustainable Energy and Power Distribution\n");
+        }
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Process Instrumentation and Control")) {
+            resultText.append("- Process Instrumentation and Control\n");
+        }
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Autotronics Engineering Technology")) {
+            resultText.append("- Autotronics Engineering Technology\n");
+        }
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Mechatronics (Mechanical Engineering)")) {
+            resultText.append("- Mechatronics (Mechanical Engineering)\n");
+        }
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Precision Tooling Engineering Technology")) {
+            resultText.append("- Precision Tooling Engineering Technology\n");
+        }
+        if (isEligibleForCourse(mathGrade, englishGrade, "Software Engineering")) {
+            resultText.append("- Software Engineering\n");
+        }
+        if (isEligibleForCourse(mathGrade, getScienceGrade(), englishGrade, "Cyber Security Technology")) {
+            resultText.append("- Cyber Security Technology\n");
+        }
+        if (isEligibleForCourse(mathGrade, englishGrade, "Creative Multimedia")) {
+            resultText.append("- Creative Multimedia\n");
+        }
+        if (isEligibleForPreUniversity(mathGrade, englishGrade, "German A Levels Preparatory Programme (GAPP)")) {
+            resultText.append("- German A Levels Preparatory Programme (GAPP)\n");
+        }
+        if (isEligibleForPreUniversity(mathGrade, englishGrade, "GMI-UTP Foundation Programme (GUFP)")) {
+            resultText.append("- GMI-UTP Foundation Programme (GUFP)\n");
+        }
+
+        eligibilityResult.setText(resultText.length() > 36 ? resultText.toString() : "Not eligible for any course.");
+    }
+
+    private boolean isEligibleForCourse(String math, String science, String english, String courseName) {
+        return isCredit(math) && isCredit(science) && isCredit(english);
+    }
+
+    private boolean isEligibleForCourse(String math, String english, String courseName) {
+        return isCredit(math) && isCredit(english) && hasEligibleAdditionalSubject();
+    }
+
+    private boolean isEligibleForPreUniversity(String math, String english, String program) {
+        String addMathGrade = additionalSubjectGrades.get("Add Mathematics");
+        String physicsGrade = additionalSubjectGrades.get("Physics");
+        String chemistryGrade = additionalSubjectGrades.get("Chemistry");
+
+        return isCredit(math) && isCredit(english) && isCredit(addMathGrade)
+                && isCredit(physicsGrade) && isCredit(chemistryGrade);
+    }
+
+    private boolean hasEligibleAdditionalSubject() {
+        for (String subject : selectedAdditionalSubjects) {
+            String grade = additionalSubjectGrades.get(subject);
+            if (grade != null && isCredit(grade)) {
+                return true;
             }
         }
+        return false;
+    }
+
+    private boolean isCredit(String grade) {
+        return grade != null && (grade.equalsIgnoreCase("A") || grade.equalsIgnoreCase("B") || grade.equalsIgnoreCase("C"));
+    }
+
+    private String getScienceGrade() {
+        return additionalSubjectGrades.getOrDefault("Science", historyInput.getText().toString());
     }
 }
