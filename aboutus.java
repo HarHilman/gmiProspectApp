@@ -2,7 +2,7 @@ package gmi.harith.gmiprospect;
 
 import android.content.Intent;  // Import this
 import android.os.Bundle;
-
+import android.net.Uri;  // Import this for the URL
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -32,6 +32,15 @@ public class aboutus extends AppCompatActivity {
                 // Start the menu activity
                 Intent intent = new Intent(aboutus.this, menu.class);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.LearnMoreButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open the URL in a browser
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.gmi.edu.my/"));
+                startActivity(browserIntent);
             }
         });
     }
