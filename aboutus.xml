@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".aboutus">
 
-    <!-- Top Header -->
-
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
@@ -18,23 +16,19 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Top Header -->
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/topHeader"
+        android:id="@+id/TopHeader"
         android:name="androidx.appcompat.app.AppCompatDialogFragment"
         android:layout_width="0dp"
-        android:layout_height="69dp"
+        android:layout_height="71dp"
         android:background="#2247A0"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- About Us Title -->
     <TextView
@@ -42,147 +36,143 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ABOUT US"
-        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/topHeader"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/TopHeader"
+        app:layout_constraintBottom_toBottomOf="@id/TopHeader"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topHeader"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- TextViews for content -->
-
-    <!-- ImageView and TextView pairs -->
-
+    <!-- Description TextViews -->
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="145dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="28dp"
-        android:text="Comprehensive and World Class Technology Labs "
+        android:id="@+id/textView4"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Build Your Future With German Engineering and Technology"
         android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/TopHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="292dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="32dp"
-        android:text="33 Years Of German Engineering Education Experience "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="33 Years Of German Engineering Education"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="137dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="36dp"
-        android:text="German and Malaysian Connection "
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+    <!-- Icons and Text Descriptions -->
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="105dp"
         android:layout_height="84dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toStartOf="@id/imageView5"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView5"
         app:srcCompat="@drawable/graduatehat" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="164dp"
-        android:layout_height="35dp"
+        android:id="@+id/textView10"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Industry 4.0 Ready Graduates "
+        android:text="Comprehensive and World Class Technology Labs"
         android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="105dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/tech" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="105dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/link" />
+        app:layout_constraintEnd_toEndOf="@id/imageView6"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@id/imageView6"
+        app:layout_constraintTop_toBottomOf="@id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="105dp"
         android:layout_height="84dp"
-        android:layout_marginTop="64dp"
+        app:srcCompat="@drawable/employed"
+        app:layout_constraintTop_toTopOf="@id/imageView6"
+        app:layout_constraintStart_toEndOf="@id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/employed" />
+        app:layout_constraintHorizontal_bias="0.8" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="166dp"
-        android:layout_height="41dp"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="High Employability Rate (93% Employability) "
+        android:text="High Employability Rate (93% Employability)"
         android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintEnd_toEndOf="@id/imageView5"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@id/imageView5"
+        app:layout_constraintTop_toBottomOf="@id/imageView5" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toStartOf="@id/imageView7"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@id/imageView6"
+        app:srcCompat="@drawable/tech" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="290dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="32dp"
-        android:text="Build Your Future With German Engineering and Technology "
+        android:id="@+id/textView9"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Industry 4.0 Ready Graduates"
         android:textAlignment="center"
-        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageView8"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@id/imageView8"
+        app:layout_constraintTop_toBottomOf="@id/imageView8" />
+
+    <!-- Buttons -->
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@id/imageView8"
+        app:layout_constraintTop_toTopOf="@id/imageView8"
+        app:srcCompat="@drawable/link" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="German and Malaysian Connection"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/imageView7"
+        app:layout_constraintStart_toStartOf="@id/imageView7"
+        app:layout_constraintTop_toBottomOf="@id/imageView7" />
+
+    <Button
+        android:id="@+id/LearnMoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Learn More"
+        app:layout_constraintEnd_toStartOf="@id/NextButton"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topHeader"
-        app:layout_constraintVertical_chainStyle="spread" />
-
-    <!-- Second row of icons -->
-
-    <!-- Next button -->
+        app:layout_constraintTop_toBottomOf="@id/textView9" />
 
     <!-- Bottom Header -->
 
@@ -190,25 +180,22 @@
         android:id="@+id/NextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="Next"
-        app:layout_constraintBottom_toTopOf="@+id/bottomHeader"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@id/LearnMoreButton"
+        app:layout_constraintTop_toBottomOf="@id/textView8" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/bottomHeader"
+        android:id="@+id/BottomHeader"
         android:name="androidx.appcompat.app.AppCompatDialogFragment"
         android:layout_width="0dp"
-        android:layout_height="69dp"
+        android:layout_height="72dp"
         android:background="#2247A0"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- GMI Logo -->
     <ImageView
@@ -216,9 +203,9 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:src="@drawable/gmilogo"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomHeader"
+        app:layout_constraintBottom_toBottomOf="@id/BottomHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomHeader" />
+        app:layout_constraintTop_toTopOf="@id/BottomHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
