@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".CustomerServiceFormActivity">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top Header -->
+    <TextView
+        android:id="@+id/topHeader"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        android:gravity="center"
+        android:text="Customer Service Form"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Form Content ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Personal Information Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textColor="#2247A0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <EditText
+                android:id="@+id/contactNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/contactPhoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone / Email"
+                android:inputType="textEmailAddress|phone"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Gender -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/genderMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+                <RadioButton
+                    android:id="@+id/genderFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+            </RadioGroup>
+
+            <!-- Race -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Race"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingTop="8dp" />
+
+            <RadioGroup
+                android:id="@+id/raceRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/raceMalay" android:text="Malay" />
+                <RadioButton android:id="@+id/raceChinese" android:text="Chinese" />
+                <RadioButton android:id="@+id/raceIndian" android:text="Indian" />
+                <RadioButton android:id="@+id/raceOther" android:text="Other" />
+            </RadioGroup>
+
+            <!-- Marital Status -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marital Status"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingTop="8dp" />
+
+            <RadioGroup
+                android:id="@+id/maritalStatusRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/statusSingle" android:text="Single" />
+                <RadioButton android:id="@+id/statusMarried" android:text="Married" />
+            </RadioGroup>
+
+            <!-- Department Feedback Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Department Feedback"
+                android:textColor="#2247A0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/departmentSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp" />
+
+            <!-- Service Ratings Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service Ratings"
+                android:textColor="#2247A0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <!-- Quality of Services -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quality of Services"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/qualitySeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/qualityRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="14sp" />
+
+            <!-- Professional Attributes -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Professional Attributes"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/professionalSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/professionalRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="14sp" />
+
+            <!-- Response Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Response Time"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/responseSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/responseRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="14sp" />
+
+            <!-- Additional Comments Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Comments"
+                android:textColor="#2247A0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <EditText
+                android:id="@+id/otherComments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your comments here..."
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:minLines="3" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:background="#2247A0"
+                android:textColor="#FFFFFF"
+                android:padding="12dp" />
+
+            <!-- Bottom Header -->
+            <TextView
+                android:id="@+id/bottomHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Thank you for your feedback!"
+                android:textColor="#2247A0"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

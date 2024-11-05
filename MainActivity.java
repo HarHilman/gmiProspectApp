@@ -25,29 +25,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Handle other buttons (Contact Us, Eligibility Checker)
+        // Handle Eligibility Checker Button Click
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, check.class);
+                // Start EligibilityCheckerActivity when button is clicked
+                Intent intent = new Intent(MainActivity.this, EligibilityCheckerActivity.class);
                 startActivity(intent);
-
             }
         });
 
+        // Handle Contact Us Button Click
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Start ContactActivity when button is clicked
+// Inside MainActivity or any other activity
                 Intent intent = new Intent(MainActivity.this, Contact.class);
                 startActivity(intent);
+
             }
         });
 
-        // Other window inset handling code
+        // Handling window insets for padding
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Setting padding to account for system UI elements like the status and navigation bars
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });

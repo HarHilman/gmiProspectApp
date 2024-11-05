@@ -1,0 +1,20 @@
+<resources>
+<!-- IDs for components -->
+<item name="background_image" type="id"/>
+<item name="positionEditText" type="id"/>
+<item name="idNumberEditText" type="id"/>
+<item name="complaintDetailsEditText" type="id"/>
+<item name="complainantNameEditText" type="id"/>
+<item name="mobileNumberEditText" type="id"/>
+<item name="bribeCheckbox" type="id"/>
+<item name="fraudCheckbox" type="id"/>
+<item name="harassmentCheckbox" type="id"/>
+<item name="nepotismCheckbox" type="id"/>
+<item name="otherViolationCheckbox" type="id"/>
+<item name="acknowledgeCheckbox" type="id"/>
+<item name="contactText4" type="id"/>
+<item name="individualNameEditText" type="id"/>
+<item name="nameEditText" type="id">nameEditText</item>
+<item name="contactNumberEditText" type="id">contactNumberEditText</item>
+<item name="enquiryEditText" type="id">enquiryEditText</item>
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".Contact">
+
+    <!-- Top Header -->
+    <View
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/returnbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topHeader" />
+
+    <!-- Title -->
+
+    <!-- Button Group -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="147dp"
+        android:text="Contact Us"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topHeader" />
+
+    <!-- Contact Information -->
+
+    <TextView
+        android:id="@+id/gmi_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="519dp"
+        android:layout_marginBottom="153dp"
+        android:gravity="center"
+        android:text="German-Malaysian Institute\nJalan Ilmiah, Taman Universiti\n43000 Kajang, Selangor, Malaysia"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gmi_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="586dp"
+        android:layout_marginBottom="123dp"
+        android:text="Phone: +603-8921 9000"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gmi_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="616dp"
+        android:layout_marginBottom="93dp"
+        android:text="Email: marketing@gmi.edu.my"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Bottom Header -->
+    <View
+        android:id="@+id/bottomHeader"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- GMI Logo -->
+    <ImageView
+        android:id="@+id/gmiLogo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:src="@drawable/gmilogo"
+        app:layout_constraintBottom_toBottomOf="@id/bottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/enquiry_form_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="294dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="387dp"
+        android:backgroundTint="#2247A0"
+        android:text="Enquiry Form"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/integrity_complaint_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="458dp"
+        android:backgroundTint="#2247A0"
+        android:text="Integrity Complaint"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/customer_service_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="157dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="524dp"
+        android:backgroundTint="#2247A0"
+        android:text="Customer Service"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

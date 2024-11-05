@@ -1,3 +1,54 @@
 <resources>
+    <!-- String resources -->
     <string name="app_name">gmiProspect</string>
+    <string name="todo">TODO</string>
+    <string name="customer_service">Customer Service</string>
+    <string name="integrity_complaint">Integrity Complaint</string>
+    <string name="enquiry_form">Enquiry Form</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="course_list">Course List</string>
+    <string name="eligibility_checker">Eligibility Checker</string>
+    <string name="customer_service_form">Customer Service Form</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="phone_email_hint">Enter your phone or email</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="race">Race</string>
+    <string name="race_malay">Malay</string>
+    <string name="race_chinese">Chinese</string>
+    <string name="race_indian">Indian</string>
+    <string name="race_other">Other</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="single">Single</string>
+    <string name="married">Married</string>
+    <string name="department_feedback">Department Feedback</string>
+    <string name="indicator_performance">Indicator Performance</string>
+    <string name="quality_of_services">Quality of Services</string>
+    <string name="professional_attributes">Professional Attributes</string>
+    <string name="response_time">Response Time</string>
+    <string name="additional_comments">Additional Comments</string>
+    <string name="other_comments">Any other comments...</string>
+    <string name="name_required">Name is required.</string>
+    <string name="phone_email_required">Phone number is required.</string>
+    <string name="form_submitted">Form submitted successfully!</string>
+    <string name="submit">Submit</string>
+    <string name="returnbutton">returnbutton\n</string>
+
+    <string-array name="department_options">
+        <item>DIRECTOR OFFICE (DO) - Legal / Management</item>
+        <item>INTERNAL AUDIT, RISK MGMT &amp; COMPLIANCE (IARMC) - Governance</item>
+        <item>BUSINESS DEVELOPMENT (BD) - Short Term Course / GDVT / Projects</item>
+        <item>INFORMATION AND COMMUNICATION TECHNOLOGY (ICT)</item>
+        <item>REGISTRAR OFFICE (RO) - Student Affairs &amp; Services / Hostel / Library</item>
+        <item>ASSET MANAGEMENT &amp; PROCUREMENT (AMP) - Reception / Facilities / Security, Safety &amp; Health / Tender</item>
+        <item>HUMAN CAPITAL MANAGEMENT (HCM)</item>
+        <item>FINANCE</item>
+        <item>STRATEGIC PLANNING, CORPORATE COMMUNICATION &amp; MARKETING (SPCM)</item>
+        <item>MECHANICAL ENGINEERING (MED) - Training</item>
+        <item>ELECTRICAL ENGINEERING (EED) - Training</item>
+        <item>PRE-UNIVERSITY &amp; GENERAL STUDIES (PGS) - Training</item>
+    </string-array>
+
 </resources>

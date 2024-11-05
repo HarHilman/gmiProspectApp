@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".IntegrityComplaintForm">
+
+    <!-- Background Image -->
+
+    <!-- Top Header -->
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/mobileNumberEditText"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="214dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="230dp"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/complainantNameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/harassmentCheckbox"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="222dp"
+        android:layout_marginBottom="400dp"
+        android:text="Harassment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/nepotismCheckbox"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="400dp"
+        android:text="Nepotism"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/fraudCheckbox"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="443dp"
+        android:text="Fraudulent Activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bribeCheckbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/positionEditText"
+        android:layout_width="172dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="229dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="601dp"
+        android:hint="Position"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/individualNameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#2247A0"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Complaint Form Title -->
+
+    <!-- Name and Position fields side by side -->
+
+    <!-- ID Number Field -->
+    <EditText
+        android:id="@+id/individualNameEditText"
+        android:layout_width="206dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="601dp"
+        android:hint="Name"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idNumberEditText"
+        android:layout_width="388dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="541dp"
+        android:hint="ID Number (if any)"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Type of Violation Header -->
+
+    <!-- Type of Violation checkboxes in two columns -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="385dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="492dp"
+        android:text="Type of Violation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Complaint Details -->
+
+    <!-- Complainant Section Header -->
+
+    <!-- Name and Mobile fields side by side -->
+
+    <CheckBox
+        android:id="@+id/bribeCheckbox"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="223dp"
+        android:layout_marginBottom="443dp"
+        android:text="Give and/or Accept Bribe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <EditText
+        android:id="@+id/complaintDetailsEditText"
+        android:layout_width="371dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="347dp"
+        android:hint="Please give full details of the complaint..."
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/complainantSectionHeader"
+        android:layout_width="387dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="292dp"
+        android:text="COMPLAINT DETAILS"
+        android:textAlignment="center"
+        android:textColor="#2247A0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Email Field -->
+
+    <!-- Acknowledgement Checkbox and Submit Button -->
+
+    <!-- Bottom Header -->
+
+    <EditText
+        android:id="@+id/complainantNameEditText"
+        android:layout_width="188dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="228dp"
+        android:hint="Name"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="386dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="166dp"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/acknowledgeCheckbox"
+        android:layout_width="242dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="607dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="83dp"
+        android:text="I acknowledge the complaint and the details given above are correct."
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/bottomHeader"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="#2247A0"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- GMI Logo -->
+    <ImageView
+        android:id="@+id/gmiLogo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:src="@drawable/gmilogo"
+        app:layout_constraintBottom_toBottomOf="@id/bottomHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="604dp"
+        android:layout_marginBottom="82dp"
+        android:backgroundTint="#2247A0"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="683dp"
+        android:text="Complaint Form"
+        android:textAlignment="viewEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/returnbutton"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="357dp"
+        android:layout_marginBottom="677dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/returnbutton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
